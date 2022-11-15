@@ -54,3 +54,22 @@ minikube tunnel
 
 Kubectl:
 --------
+kubectl apply -f k8s-nodejs-simple-rest.yml
+kubectl get deployments
+kubectl get pods
+kubectl get services
+kubectl get services
+kubectl delete -f k8s-nodejs-simple-rest.yml
+
+kubectl create deployment hello-node --image=registry.k8s.io/echoserver:1.4
+kubectl expose deployment hello-node --type=LoadBalancer --port=8080
+kubectl get services
+kubectl get svc
+
+kubectl exec --stdin --tty nodejs-simple-rest-7f4f5cd5df-lrlnv -- /bin/bash
+kubectl exec --stdin --tty nodejs-simple-rest-7f4f5cd5df-lrlnv -- /bash
+kubectl exec --stdin --tty nodejs-simple-rest-7f4f5cd5df-lrlnv -- /sh
+kubectl exec --stdin --tty nodejs-simple-rest-7f4f5cd5df-lrlnv -- /bin/sh
+
+kubectl delete service nodejs-simple-rest
+kubectl delete deployment nodejs-simple-rest

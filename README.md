@@ -1,75 +1,72 @@
-# nodejs-simple-rest
+node steps: <br>
+----------- <br>
+mkdir nodejs-simple-rest <br>
+cd nodejs-simple-rest <br>
+npm init <br>
+npm install express <br>
+node index.js <br>
 
-node steps:
------------
-mkdir nodejs-simple-rest
-cd nodejs-simple-rest
-npm init
-npm install express
-node index.js
+git: <br>
+---- <br>
+echo "# nodejs-simple-rest" >> README.md <br>
+git init <br>
+git add -A <br>
+git commit -m "first commit" <br>
+git branch -M main <br>
+git remote add origin https://github.com/maheshpeddigithub/nodejs-simple-rest.git <br>
+git push -u origin main <br>
 
+Docker: <br>
+------- <br>
+docker build . -t cloudmahesh/nodejs-simple-rest <br>
+docker images <br>
+docker run -p 8081:8080 cloudmahesh/nodejs-simple-rest <br>
+curl -i http://localhost:8081/api/v1/cars <br>
 
-git:
-----
-echo "# nodejs-simple-rest" >> README.md
-git init
-git add -A
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/maheshpeddigithub/nodejs-simple-rest.git
-git push -u origin main
+docker ps <br>
+docker logs <container id> <br>
+docker exec -it <container id> /bin/bash <br>
+docker kill <container id> (or) docker stop <container id> <br>
 
-Docker:
--------
-docker build . -t cloudmahesh/nodejs-simple-rest
-docker images
-docker run -p 8081:8080 cloudmahesh/nodejs-simple-rest
-curl -i http://localhost:8081/api/v1/cars
+docker push cloudmahesh/nodejs-simple-rest <br>
+docker pull cloudmahesh/nodejs-simple-rest <br>
 
-docker ps
-docker logs <container id>
-docker exec -it <container id> /bin/bash
-docker kill <container id> (or) docker stop <container id>
-
-docker push cloudmahesh/nodejs-simple-rest
-docker pull cloudmahesh/nodejs-simple-rest
-
-docker stop $(docker ps -a -q)
-docker rm $(docker ps -a -q)
-docker rmi $(docker images -q)
+docker stop $(docker ps -a -q) <br>
+docker rm $(docker ps -a -q) <br>
+docker rmi $(docker images -q) <br>
 
 
-minikube:
----------
-minikube start
-minikube stop
+minikube: <br>
+--------- <br>
+minikube start <br>
+minikube stop <br>
 
-minikube image load cloudmahesh/nodejs-simple-rest:latest
-minikube image ls
+minikube image load cloudmahesh/nodejs-simple-rest:latest <br>
+minikube image ls <br>
 
-minikube service nodejs-simple-rest
+minikube service nodejs-simple-rest <br>
 
-minikube tunnel
+minikube tunnel <br>
 
 
-Kubectl:
---------
-kubectl apply -f k8s-nodejs-simple-rest.yml
-kubectl get deployments
-kubectl get pods
-kubectl get services
-kubectl get services
-kubectl delete -f k8s-nodejs-simple-rest.yml
+Kubectl: <br>
+-------- <br>
+kubectl apply -f k8s-nodejs-simple-rest.yml <br>
+kubectl get deployments <br>
+kubectl get pods <br>
+kubectl get services <br>
+kubectl get services <br>
+kubectl delete -f k8s-nodejs-simple-rest.yml <br>
 
-kubectl create deployment hello-node --image=registry.k8s.io/echoserver:1.4
-kubectl expose deployment hello-node --type=LoadBalancer --port=8080
-kubectl get services
-kubectl get svc
+kubectl create deployment hello-node --image=registry.k8s.io/echoserver:1.4 <br>
+kubectl expose deployment hello-node --type=LoadBalancer --port=8080 <br>
+kubectl get services <br>
+kubectl get svc <br>
 
-kubectl exec --stdin --tty nodejs-simple-rest-7f4f5cd5df-lrlnv -- /bin/bash
-kubectl exec --stdin --tty nodejs-simple-rest-7f4f5cd5df-lrlnv -- /bash
-kubectl exec --stdin --tty nodejs-simple-rest-7f4f5cd5df-lrlnv -- /sh
-kubectl exec --stdin --tty nodejs-simple-rest-7f4f5cd5df-lrlnv -- /bin/sh
+kubectl exec --stdin --tty nodejs-simple-rest-7f4f5cd5df-lrlnv -- /bin/bash <br>
+kubectl exec --stdin --tty nodejs-simple-rest-7f4f5cd5df-lrlnv -- /bash <br>
+kubectl exec --stdin --tty nodejs-simple-rest-7f4f5cd5df-lrlnv -- /sh <br>
+kubectl exec --stdin --tty nodejs-simple-rest-7f4f5cd5df-lrlnv -- /bin/sh <br>
 
-kubectl delete service nodejs-simple-rest
-kubectl delete deployment nodejs-simple-rest
+kubectl delete service nodejs-simple-rest <br>
+kubectl delete deployment nodejs-simple-rest <br>
